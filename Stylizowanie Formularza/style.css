@@ -1,0 +1,125 @@
+body
+{
+	/* Background pattern from Subtle Patterns */
+	background-image: url("img/hexellence.png");
+	font-size: 20px;
+}
+
+#container
+{
+	background-color: white;
+	width: 300px;
+	padding: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	/* można wygooglować box shadow generator zeby zobaczyc efekty */
+	-webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+	-moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+	box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+
+}
+
+input[type=text],
+input[type=password]
+{
+	width: 300px;
+	background-color: #efefef;
+	color: #6666;
+	border: 2px solid #ddd;
+	border-radius: 5px;
+	/* Inputy nie dziedziczą rozmiaru czcionki po znaczniku body!!! */
+	font-size: 20px;
+	/* Uwaga, padding zmieni długość pola Login i Hasło, ale nie przycisku LOOGIN!! padding daje wewnętrzny odstęp omiedzy tekstem a ramką z każdej z 4ech stron
+	w polach edycyjnych stosujemy zasadę obliczania rozmiarów wg contentu czyli zawartości pola 
+	box-sizing: content-box dlatego 10px padding rozszerzył szerokość pól edycyjnych 
+	box-sizing:border-box przycisk używa innego sposobu liczenia rozmiaru
+	*/
+	padding: 10px;
+	/*border-box nakazuje ustawić 300px niezaleznie od szerokosci kontentu */
+	box-sizing: border-box;
+	outline: none;
+	margin-top: 10px;
+	
+	/* stylizowanie polem input {powyżej jest inaczej: input[type=text],
+input[type=password]} ale mogłoby być samo {input} ma tę wadę że przycisk dziedziczy takie same kolory co pozostałe pola */
+	
+}
+/* po aktywowaniu danego pola (np przy wpisywaniu */
+input[type=text]:focus,
+input[type=password]:focus
+{
+	-webkit-box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9);
+	-moz-box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9);
+	box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9);
+	border: 2px solid #a5cda5;
+	background-color: #e9f3e9;
+	color: #428c42;
+}
+
+input[type=submit]
+{
+	width: 300px;
+	background-color: #36b03c;
+	font-size: 20px;
+	color: white;
+	padding: 15px;
+	margin-top: 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	letter-spacing: 2px;
+	outline: none;
+	
+}
+
+input[type=submit]:focus
+{
+	-webkit-box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+	-moz-box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+	box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+}
+
+input[type=submit]:hover
+{
+	background-color: #37b93d;
+}
+
+/* kolor tekstu w formularzu*/
+/*w webkicie (chrome, opera, safari) */ 
+input::-webkit-input-placeholder
+{
+	color: #999;
+}
+input:focus::-webkit-input-placeholder
+{
+	color: #428c42;
+}
+/*firefox < 19 */
+input:-moz-placeholder
+{
+	color: #999;
+}
+input:focus:-moz-placeholder
+{
+	color: #428c42;
+}
+/*firefox > 19 */
+input::-moz-placeholder
+{
+	color: #999;
+}
+input:focus::-moz-placeholder
+{
+	color: #428c42;
+}
+/*internet Explorer 10 */
+input:-ms-input-placeholder
+{
+	color: #999;
+}
+input:focus:-ms-input-placeholder
+{
+	color: #428c42;
+}
+
